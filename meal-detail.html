@@ -12,7 +12,6 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <header class="overflow-hidden rounded-lg bg-white shadow">
@@ -32,13 +31,12 @@
         Find Your Favorite Food Here
       </p>
     </div>
-    <div class="py-4 mx-auto">
-      <p class="text-2xl text-center" id="category-name">Category List</p>
+    <div class="py-4 px-5">
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-4"
-        id="meal-list"
+        id="meal-detail"
+        class="divide-y w-96 mx-auto lg:w-[750px] divide-gray-200 overflow-hidden rounded-lg bg-white shadow-xl"
       ></div>
     </div>
-    <script src="category.js"></script>
+    <script src="meal.js"></script>
   </body>
 </html>

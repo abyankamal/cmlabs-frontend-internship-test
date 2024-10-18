@@ -15,14 +15,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
       meals.forEach((meal) => {
         output += `
-                    <div class="col-md-4 mb-3">
-                        <div class="card" onclick="redirectToMealDetail('${meal.idMeal}')">
-                            <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}">
-                            <div class="card-body">
-                                <h5 class="card-title">${meal.strMeal}</h5>
-                            </div>
-                        </div>
-                    </div>`;
+                    <div class="w-full relative group max-w-sm mx-auto h-auto">
+  <!-- Image -->
+  <img
+    src="${meal.strMealThumb}"
+    alt="Sample Image"
+    class="w-full h-full object-cover rounded-lg"
+  />
+
+  <!-- Text to show on hover -->
+  <div
+    class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg p-5"
+  >
+    <span class="text-white text-2xl font-bold text-center">${meal.strMeal}</span>
+    <button type="button" onclick="redirectToMealDetail('${meal.idMeal}')" class="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Detail Meal</button>
+  </div>
+</div>`;
       });
       mealList.innerHTML = output;
     })
